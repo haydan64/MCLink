@@ -17,7 +17,7 @@ The following commands can be sent to the server via the WebSocket to manage the
 ## Example Command JSON
 All commands are transmitted in JSON format:
 
-```js
+```json
 {
     "type": 1,
     "body": {
@@ -31,7 +31,7 @@ All commands are transmitted in JSON format:
 The server emits the following events, which need to be subscribed to by sending a subscribe event with a list of event names. Each event has a specific type number, which is included in the body.
 
 - **Player Spawned (Type: 1)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -40,7 +40,7 @@ The server emits the following events, which need to be subscribed to by sending
         "data": {
             "xuid": "string",
             "player": "string",
-            "location": [x: float, y: float, z: float],
+            "location": ["x: float", "y: float", "z: float"],
             "dimension": "string",
             "gamemode": "string",
             "tags": ["string"]
@@ -49,7 +49,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Leave (Type: 2)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -63,7 +63,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Message (Type: 3)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -78,7 +78,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Gamemode Change (Type: 4)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -93,7 +93,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Place (Type: 5)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -103,14 +103,14 @@ The server emits the following events, which need to be subscribed to by sending
             "xuid": "string",
             "player": "string",
             "dimension": "string",
-            "location": [x: int, y: int, z: int],
+            "location": ["x: int", "y: int", "z: int"],
             "block": "string"
         }
     }
 }
 ```
 - **Player Break (Type: 6)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -120,14 +120,14 @@ The server emits the following events, which need to be subscribed to by sending
             "xuid": "string",
             "player": "string",
             "dimension": "string",
-            "location": [x: int, y: int, z: int],
+            "location": ["x: int", "y: int", "z: int"],
             "block": "string"
         }
     }
 }
 ```
 - **Weather (Type: 7)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -141,7 +141,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Death (Type: 8)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -153,14 +153,14 @@ The server emits the following events, which need to be subscribed to by sending
             "cause": "string",
             "killer": "string",
             "killerName": "string | undefined",
-            "location": [x: float, y: float, z: float],
+            "location": ["x: float", "y: float", "z: float"],
             "dimension": "string"
         }
     }
 }
 ```
 - **Explosion (Type: 9)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -170,13 +170,13 @@ The server emits the following events, which need to be subscribed to by sending
             "dimension": "string",
             "source": "string",
             "sourceName": "string | undefined",
-            "sourceLocation": [x: float, y: float, z: float]
+            "sourceLocation": ["x: float", "y: float", "z: float"]
         }
     }
 }
 ```
 - **Gamerule Change (Type: 10)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -190,7 +190,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Item Use (Type: 11)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -199,7 +199,7 @@ The server emits the following events, which need to be subscribed to by sending
         "data": {
             "xuid": "string",
             "player": "string",
-            "location": [x: float, y: float, z: float],
+            "location": ["x: float", "y: float", "z: float"],
             "dimension": "string",
             "item": "string",
             "amount": "int"
@@ -208,7 +208,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Item Use On (Type: 12)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -217,18 +217,18 @@ The server emits the following events, which need to be subscribed to by sending
         "data": {
             "xuid": "string",
             "player": "string",
-            "location": [x: float, y: float, z: float],
+            "location": ["x: float", "y: float", "z: float"],
             "dimension": "string",
             "item": "string",
             "amount": "int",
             "block": "string",
-            "blockLoc": [x: int, y: int, z: int]
+            "blockLoc": ["x: int", "y: int", "z: int"]
         }
     }
 }
 ```
 - **Player Interact Block (Type: 13)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -237,7 +237,7 @@ The server emits the following events, which need to be subscribed to by sending
         "data": {
             "xuid": "string",
             "player": "string",
-            "location": [x: int, y: int, z: int],
+            "location": ["x: int", "y: int", "z: int"],
             "dimension": "string",
             "item": "string | undefined",
             "amount": "int | undefined",
@@ -247,7 +247,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Interact Entity (Type: 14)**
-```js
+```json
 {
     "type": 2,
     "body": {
@@ -256,7 +256,7 @@ The server emits the following events, which need to be subscribed to by sending
         "data": {
             "xuid": "string",
             "player": "string",
-            "location": [x: int, y: int, z: int],
+            "location": ["x: int", "y: int", "z: int"],
             "dimension": "string",
             "item": "string | undefined",
             "amount": "int | undefined",
@@ -272,7 +272,7 @@ To receive events, you must subscribe by sending a JSON object listing the event
 
 - **Example subscription JSON:**
 
-```js
+```json
 {
     "type": "subscribe",
     "events": ["Player Spawned", "Player Leave", "Player Message"]
@@ -285,7 +285,7 @@ The commands reload, restart, stop, start, backup, allowlist, whitelist, op, deo
 
 - **Example command JSON:**
 
-```js
+```json
 {
     "type": 1,
     "body": {
