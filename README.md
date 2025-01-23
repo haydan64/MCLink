@@ -3,6 +3,9 @@
 ## Overview
 This WebSocket API allows you to interact with a Minecraft Bedrock Edition Server. It supports commands for server management and emits various events related to player activities and server state.
 
+## IN DEVELOPMENT
+This project is currently in development, and has no release versions.
+
 ## Server Management Commands
 The following commands can be sent to the server via the WebSocket to manage the server process environment:
 
@@ -262,7 +265,7 @@ The server emits the following events, which need to be subscribed to by sending
         }
     }
 }
-
+```
 ## Subscribing to Events
 To receive events, you must subscribe by sending a JSON object listing the events you want to listen to.
 
@@ -274,7 +277,7 @@ To receive events, you must subscribe by sending a JSON object listing the event
     "type": "subscribe",
     "events": ["Player Spawned", "Player Leave", "Player Message"]
 }
-
+```
 ## Sending Commands
 You can send commands to the WebSocket to manage the server or perform actions.
 The Env can be `process` or `internal`.
@@ -290,3 +293,4 @@ The commands reload, restart, stop, start, backup, allowlist, whitelist, op, deo
         "command": "backup"
     }
 }
+```
