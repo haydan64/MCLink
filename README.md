@@ -17,7 +17,7 @@ The following commands can be sent to the server via the WebSocket to manage the
 ## Example Command JSON
 All commands are transmitted in JSON format:
 
-```json
+```js
 {
     "type": 1,
     "body": {
@@ -31,7 +31,7 @@ All commands are transmitted in JSON format:
 The server emits the following events, which need to be subscribed to by sending a subscribe event with a list of event names. Each event has a specific type number, which is included in the body.
 
 - **Player Spawned (Type: 1)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -49,7 +49,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Leave (Type: 2)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -63,7 +63,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Message (Type: 3)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -78,7 +78,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Gamemode Change (Type: 4)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -93,7 +93,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Place (Type: 5)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -110,7 +110,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Break (Type: 6)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -127,7 +127,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Weather (Type: 7)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -141,7 +141,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Death (Type: 8)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -160,7 +160,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Explosion (Type: 9)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -176,7 +176,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Gamerule Change (Type: 10)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -190,7 +190,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Item Use (Type: 11)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -208,7 +208,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Item Use On (Type: 12)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -228,7 +228,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Interact Block (Type: 13)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -247,7 +247,7 @@ The server emits the following events, which need to be subscribed to by sending
 }
 ```
 - **Player Interact Entity (Type: 14)**
-```json
+```js
 {
     "type": 2,
     "body": {
@@ -272,7 +272,7 @@ To receive events, you must subscribe by sending a JSON object listing the event
 
 - **Example subscription JSON:**
 
-```json
+```js
 {
     "type": "subscribe",
     "events": ["Player Spawned", "Player Leave", "Player Message"]
@@ -285,7 +285,7 @@ The commands reload, restart, stop, start, backup, allowlist, whitelist, op, deo
 
 - **Example command JSON:**
 
-```json
+```js
 {
     "type": 1,
     "body": {
