@@ -7,6 +7,7 @@ module.exports = {
     "autoUpdate": false, //If the server should auto update when MCLink is started. (Ignored if verifyInstall is false)
     "autoStart": true, //when MCLink starts, start the BDS aswell.
     "logs": true,
+    "PlayerTrackingInterval": 0, //How often the MC server should report player positions. (# of MC Ticks, use 0 to disable)
 
     /** WEBSOCKETS
      * Websockets can be used to connect the bds with external apps.
@@ -14,8 +15,8 @@ module.exports = {
     "websocketMode": "connect", //'listen' or 'connect'. listening will allow connections to MCLink. Connecting MCLink will connect to a websocket.
     "websocketPort": 8080, //The port the websocket will listen or connect to.
     "websocketHost": "localhost", //The host for the websocket to connect to. (Ignored if websocketMode is 'listen')
-    "PlayerTrackingInterval": 0, //How often the MC server should report player positions. (# of MC Ticks, use 0 to disable)
     "allowConnections": ["127.0.0.1"], //IPs to allow a connection from if websocketMode is 'listen'. Use true to allow all.
+    "websocketReconnectDelay": 5000, //Miliseconds before trying to reconnect to a websocket. (ignored when websocketMode is 'listen')
 
     /** BACKUPS
      *To prevent a backup from being deleted, rename the backup to start with P, OR to NOT start with D, W, M, or Y 

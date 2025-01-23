@@ -1,14 +1,22 @@
 const Bedrock = require("./bds");
-const Discord = require("./discord/discord");
+const API = require("./api");
+const States = require("./states");
+const Backup = require("./backup");
+
 
 process.stdin.on("data", (data)=>{
-    switch(data.toString().split(" ")[0].trim()) {
+    runProcessCommand(data.toString());
+    
+});
+
+function runProcessCommand(command) {
+    switch(command.split(" ")[0].trim()) {
         case("start"): {
             Bedrock.start();
             break;
         }
         case("run"): {
-            console.log(eval(data.toString().substring(4)));
+            console.log(eval(command.substring(4)));
             break;
         }
         default: {
@@ -16,4 +24,4 @@ process.stdin.on("data", (data)=>{
             break;
         }
     }
-});
+}

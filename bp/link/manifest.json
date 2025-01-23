@@ -1,0 +1,50 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "MCLink",
+        "description": "Auto-applied behavior pack to link the BDS with MCLink.",
+        "uuid": "6daa411e-2547-4b92-8d61-a57c73bc1ed9",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            50
+        ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "e2771496-93b5-4669-b8e1-d4049a635f87",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "599dc8d1-52ec-4914-8475-b18318598c54",
+            "entry": "scripts/index.js",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.17.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.4.0-beta"
+        }
+    ]
+}

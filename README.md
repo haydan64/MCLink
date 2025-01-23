@@ -271,11 +271,17 @@ To receive events, you must subscribe by sending a JSON object listing the event
 
 
 - **Example subscription JSON:**
-
 ```json
 {
-    "type": "subscribe",
-    "events": ["Player Spawned", "Player Leave", "Player Message"]
+    "type": 2,
+    "body": ["Player Spawned", "Player Leave", "Player Message"]
+}
+```
+- **Example unsubscription JSON:**
+```json
+{
+    "type": 3,
+    "body": ["Player Spawned", "Player Leave", "Player Message"]
 }
 ```
 ## Sending Commands

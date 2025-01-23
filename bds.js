@@ -114,6 +114,10 @@ class bds extends EventEmitter {
         this.runCommand(`scriptevent link:${event} ${JSON.stringify(message)}`);
     }
 
+    backup() {
+        
+    }
+
     /**
      * 
      * @param {String} event 
